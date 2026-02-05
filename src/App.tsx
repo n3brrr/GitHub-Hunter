@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
 import HistoryList from "./components/HistoryList";
 import useGithub from "./hooks/useGithub";
+
 /**
  * Main Application Component
 
