@@ -21,7 +21,7 @@ export default function SearchBar({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedUsername = username.trim();
-    if (trimmedUsername) fetchUser(trimmedUsername);
+    if (trimmedUsername !== "") fetchUser(trimmedUsername);
     setUsername("");
   };
 
