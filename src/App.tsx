@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
-
+import HistoryList from "./components/HistoryList";
 import type { GithubUser } from "./types";
 
 /**
@@ -73,6 +73,11 @@ function App() {
       <p className="text-2xl font-bold text-center m-10">GitHub Hunter</p>
       <SearchBar fetchUser={fetchUser} />
       <UserCard user={user} loading={loading} error={error} />
+      <HistoryList
+        history={history}
+        setHistory={setHistory}
+        onSelectUser={fetchUser}
+      />
     </>
   );
 }
