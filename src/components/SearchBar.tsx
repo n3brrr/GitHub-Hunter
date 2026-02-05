@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+/**
+ * SearchBar Component
+ *
+ * Provides an input field and button for users to search for GitHub profiles.
+ *
+ * @param fetchUser - Function to call with the search query when submitted.
+ */
 export default function SearchBar({
   fetchUser,
 }: {
@@ -7,6 +14,10 @@ export default function SearchBar({
 }) {
   const [username, setUsername] = useState("");
 
+  /**
+   * Handles the form submission.
+   * Trims whitespace and calls the fetchUser prop if the input is not empty.
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedUsername = username.trim();

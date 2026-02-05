@@ -1,8 +1,25 @@
 import Loading from "./Loading";
+import type { GithubUser } from "../types";
 
-export default function UserCard({ user, loading, error }: GithubUser) {
+interface UserCardProps {
+  user: GithubUser | null;
+  loading: boolean;
+  error: Error | null;
+}
+
+/**
+ * UserCard Component
+ *
+ * Displays the GitHub user's profile information.
+ * Handles loading, error, and empty states.
+ *
+ * @param user - The user data object.
+ * @param loading - Boolean indicating if data is being fetched.
+ * @param error - Error object if the fetch failed.
+ */
+export default function UserCard({ user, loading, error }: UserCardProps) {
   if (loading) return <Loading />;
-  if (error) return <p className="text-red-500">Error: {error}</p>;
+  if (error) return <p className="text-red-500">Error: {error.message}</p>;
   if (user === null) return <p className="text-center mt-5">Ready to Hunt?</p>;
 
   return (
